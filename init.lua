@@ -4,4 +4,5 @@ require "tenebrae.plugins"
 require "tenebrae.colorscheme"
 require "tenebrae.cmp"
 require "tenebrae.lsp"
+require "tenebrae.telescope"
 

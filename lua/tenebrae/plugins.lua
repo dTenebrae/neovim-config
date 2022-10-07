@@ -54,7 +54,7 @@ return packer.startup(function(use)
 
         -- colorscheme
         use 'eddyekofo94/gruvbox-flat.nvim'
-        
+
         -- cmp plugins
         use "hrsh7th/nvim-cmp"                                                  -- The completion plugin
         use "hrsh7th/cmp-buffer"                                                -- buffer completions
@@ -65,12 +65,15 @@ return packer.startup(function(use)
         use "saadparwaiz1/cmp_luasnip"                                          -- snippet completions
 
         -- snippets
-        use "L3MON4D3/LuaSnip"                                                  --snippet engine
+        use "L3MON4D3/LuaSnip"                                                  -- snippet engine
         use "rafamadriz/friendly-snippets"                                      -- a bunch of snippets to use
 
         -- LSP
         use "neovim/nvim-lspconfig"                                             -- enable LSP
         use "williamboman/nvim-lsp-installer"                                   -- simple to use language server installer
+
+        -- Telescope
+        use "nvim-telescope/telescope.nvim"                                     -- telescope itself (fzf)
 
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins
