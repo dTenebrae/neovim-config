@@ -6,4 +6,5 @@ require "tenebrae.cmp"
 require "tenebrae.lsp"
 require "tenebrae.telescope"
 require "tenebrae.treesitter"
+require "tenebrae.autopairs"
 
