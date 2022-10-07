@@ -51,6 +51,9 @@ return packer.startup(function(use)
                 "windwp/nvim-autopairs",
                 config = function() require("nvim-autopairs").setup {} end      -- parenthesis(and not only) autopairs
         }
+
+        -- colorscheme
+        use 'eddyekofo94/gruvbox-flat.nvim'
         
         -- cmp plugins
         use "hrsh7th/nvim-cmp"                                                  -- The completion plugin
@@ -58,15 +61,16 @@ return packer.startup(function(use)
         use "hrsh7th/cmp-path"                                                  -- path completions
         use "hrsh7th/cmp-cmdline"                                               -- cmdline completions
         use "hrsh7th/cmp-nvim-lua"                                              -- lua completions
-        use "Saecki/crates.nvim"                                                -- rust completions
+        use "hrsh7th/cmp-nvim-lsp"                                              -- LSP completions
         use "saadparwaiz1/cmp_luasnip"                                          -- snippet completions
 
         -- snippets
         use "L3MON4D3/LuaSnip"                                                  --snippet engine
         use "rafamadriz/friendly-snippets"                                      -- a bunch of snippets to use
 
-        -- colorscheme
-        use 'eddyekofo94/gruvbox-flat.nvim'
+        -- LSP
+        use "neovim/nvim-lspconfig"                                             -- enable LSP
+        use "williamboman/nvim-lsp-installer"                                   -- simple to use language server installer
 
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins
@@ -74,3 +78,4 @@ return packer.startup(function(use)
                 require("packer").sync()
         end
 end)
+

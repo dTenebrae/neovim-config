@@ -95,11 +95,13 @@ cmp.setup {
                 format = function(entry, vim_item)
                 -- Kind icons
                 vim_item.kind = string.format(                                       -- This concatenates the icons with the name of the item kind
-                        '%s %s', 
-                        kind_icons[vim_item.kind], 
+                        '%s %s',
+                        kind_icons[vim_item.kind],
                         vim_item.kind
-                ) 
+                )
                 vim_item.menu = ({
+                        nvim_lsp = "[LSP]",                                          --
+                        nvim_lua = "[LUA]",
                         luasnip = "[Snippet]",                                       -- 
                         buffer = "[Buffer]",                                         -- item menu names
                         path = "[Path]",                                             --
@@ -108,10 +110,11 @@ cmp.setup {
         end,
         },
         sources = {
+                { name = "nvim_lsp" },                                               --
+                { name = "nvim_lua" },                                               --
                 { name = "luasnip" },                                                --
                 { name = "buffer" },                                                 -- Order of suggestions (snippet first, buffer second, etc)
                 { name = "path" },                                                   --
-                { name = "crates" },
         },
         confirm_opts = {
                 behavior = cmp.ConfirmBehavior.Replace,

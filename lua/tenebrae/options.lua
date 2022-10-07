@@ -52,8 +52,10 @@ for k, v in pairs(options) do
         vim.opt[k] = v
 end
 
--- old commands
-vim.cmd "set whichwrap+=<,>,[,],h,l"            -- wrap around line (move cursor at end or beginning of a next line)
-vim.cmd [[set iskeyword+=-]]                    -- treat dash separated words as one word object
-
 vim.g.gruvbox_flat_style = "hard"               -- darker mode for gruvbox-flat colorscheme
+
+--vim.api.nvim_create_autocmd(
+        --{ "BufRead", "BufNewFile" },
+        --{ pattern = { "*.h" },
+        --command = "setlocal filetype=c" }
+--)
