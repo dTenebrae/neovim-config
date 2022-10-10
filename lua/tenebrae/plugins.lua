@@ -46,11 +46,7 @@ return packer.startup(function(use)
         use "nvim-lua/plenary.nvim"                                             -- Useful lua functions used ny lots of plugins
 
         use "scrooloose/nerdcommenter"                                          -- Commenting things with ease
-        use "ggandor/leap.nvim"                                                 -- blazing fast moving in files
-        use {
-                "windwp/nvim-autopairs",
-                config = function() require("nvim-autopairs").setup {} end      -- parenthesis(and not only) autopairs
-        }
+        use "ggandor/leap.nvim"                                                 -- fast moving in file
 
         -- colorscheme
         use 'eddyekofo94/gruvbox-flat.nvim'
@@ -75,12 +71,27 @@ return packer.startup(function(use)
         -- Telescope
         use "nvim-telescope/telescope.nvim"                                     -- telescope itself (fzf)
 
-        -- Treesitter and dependent
+        -- Treesitter
         use {
                 "nvim-treesitter/nvim-treesitter",
                 run = ":TSUpdate",
         }
         use "p00f/nvim-ts-rainbow"                                              -- rainbow parenthesis for treesitter
+        use {
+                "windwp/nvim-autopairs",
+                config = function() require("nvim-autopairs").setup {} end      -- parenthesis(and not only) autopairs
+        }
+
+        -- git
+        use "lewis6991/gitsigns.nvim"
+
+        -- Explorer
+        use 'kyazdani42/nvim-web-devicons'
+        use 'kyazdani42/nvim-tree.lua'
+
+        -- bufferline on top
+        use 'akinsho/bufferline.nvim'                                           -- bufferline itself
+        use 'moll/vim-bbye'                                                     -- sBdelete and other stuff for convinient closing buffers
 
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins

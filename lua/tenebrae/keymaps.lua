@@ -25,7 +25,8 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)              -- open file exploprer
+--keymap("n", "<leader>e", ":Lex 30<cr>", opts)              -- open default file exploprer
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)      -- open file exploprer
 keymap("n", "<leader>v", "viw", opts)                      -- select word
 keymap("n", "<leader>y", "\"+y", opts)                     -- yank in external buffer
 keymap("n", "<leader>p", "\"+p", opts)                     -- paste from external buffer
@@ -76,4 +77,4 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)        --
 
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>t", "<cmd>Telescope live_grep<cr>", opts)

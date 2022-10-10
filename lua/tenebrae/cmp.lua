@@ -124,7 +124,7 @@ cmp.setup {
                 documentation = cmp.config.window.bordered(),                        -- border for docs
        },
         experimental = {
-                ghost_text = true,                                                   -- zsh autosuggestions-like feature
+                ghost_text = false,                                                  -- zsh autosuggestions-like feature
                 native_menu = false,
         },
 }
