@@ -51,6 +51,19 @@ return packer.startup(function(use)
         -- colorscheme
         use 'eddyekofo94/gruvbox-flat.nvim'
 
+        -- bottomline
+        use 'nvim-lualine/lualine.nvim'
+
+        -- bufferline on top
+        use 'akinsho/bufferline.nvim'                                           -- bufferline itself
+        use 'moll/vim-bbye'                                                     -- Bdelete and other stuff for convinient closing buffers
+
+        -- indentation guides
+        use "lukas-reineke/indent-blankline.nvim"
+
+        -- indentation guides
+        use "RRethy/vim-illuminate"
+
         -- cmp plugins
         use "hrsh7th/nvim-cmp"                                                  -- The completion plugin
         use "hrsh7th/cmp-buffer"                                                -- buffer completions
@@ -89,9 +102,11 @@ return packer.startup(function(use)
         use 'kyazdani42/nvim-web-devicons'
         use 'kyazdani42/nvim-tree.lua'
 
-        -- bufferline on top
-        use 'akinsho/bufferline.nvim'                                           -- bufferline itself
-        use 'moll/vim-bbye'                                                     -- sBdelete and other stuff for convinient closing buffers
+        -- terminal emulator
+        use 'akinsho/toggleterm.nvim'
+
+        -- speedup start
+        use 'lewis6991/impatient.nvim'
 
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins

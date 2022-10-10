@@ -10,4 +10,8 @@ require "tenebrae.autopairs"
 require "tenebrae.gitsigns"
 require "tenebrae.nvim-tree"
 require "tenebrae.bufferline"
+require "tenebrae.toggleterm"
+require "tenebrae.lualine"
+require "tenebrae.impatient"
+require "tenebrae.indendline"
 

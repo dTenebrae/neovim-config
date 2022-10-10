@@ -129,10 +129,25 @@ _G.packer_plugins = {
     path = "/home/tenebrae/.local/share/nvim/site/pack/packer/start/gruvbox-flat.nvim",
     url = "https://github.com/eddyekofo94/gruvbox-flat.nvim"
   },
+  ["impatient.nvim"] = {
+    loaded = true,
+    path = "/home/tenebrae/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/tenebrae/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
   ["leap.nvim"] = {
     loaded = true,
     path = "/home/tenebrae/.local/share/nvim/site/pack/packer/start/leap.nvim",
     url = "https://github.com/ggandor/leap.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/tenebrae/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   nerdcommenter = {
     loaded = true,
@@ -199,6 +214,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tenebrae/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "/home/tenebrae/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
   },
   ["vim-bbye"] = {
     loaded = true,

@@ -44,22 +44,17 @@ M.setup = function()
         })
 end
 
--- highlighting all instances of under cursor word
-local function lsp_highlight_document(client)
-        -- Set autocommands conditional on server_capabilities
-        if client.resolved_capabilities.document_highlight then
-                vim.api.nvim_exec(
-                [[
-                        augroup lsp_document_highlight
-                        autocmd! * <buffer>
-                        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-                        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-                        augroup END
-                ]],
-                false
-        )
-        end
-end
+------ highlighting all instances of under cursor word
+--local function lsp_highlight_document(client)
+        ---- Set autocommands conditional on server_capabilities
+        --local status_ok, illuminate = pcall(require, "illuminate")
+        --if not status_ok then
+                --print("illuminate not found")
+                --return
+        --end
+        --illuminate.on_attach(client)
+        ---- end
+--end
 
 local function lsp_keymaps()
         local opts = { noremap = true, silent = true }
@@ -80,13 +75,13 @@ local function lsp_keymaps()
                 opts
                 )
         vim.keymap.set("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-        vim.keymap.set("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+        --vim.keymap.set("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
         vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
 M.on_attach = function(client)
         lsp_keymaps()
-        lsp_highlight_document(client)
+        --lsp_highlight_document(client)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
