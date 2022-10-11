@@ -1,3 +1,12 @@
+-- =======================================
+--        tenebrae's nvim config
+--            _
+--     __   _(_)_ __ ___  _ __ ___
+--     \ \ / / | '_ ` _ \| '__/ __|
+--  _   \ V /| | | | | | | | | (__
+-- (_)   \_/ |_|_| |_| |_|_|  \___|
+--
+-- =======================================
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
         return
@@ -126,3 +135,4 @@ cmp.setup {
                 native_menu = false,
         },
 }
+

@@ -1,3 +1,12 @@
+-- =======================================
+--        tenebrae's nvim config
+--            _
+--     __   _(_)_ __ ___  _ __ ___
+--     \ \ / / | '_ ` _ \| '__/ __|
+--  _   \ V /| | | | | | | | | (__
+-- (_)   \_/ |_|_| |_| |_|_|  \___|
+--
+-- =======================================
 --   Modes
 --   normal_mode       = "n",
 --   insert_mode       = "i",
@@ -33,9 +42,6 @@ keymap("n", "<leader>/", ":nohlsearch<cr>", opts)                  -- clear sear
 keymap("n", "<leader>\\", ":vsp<cr>", opts)                        -- create vertical split
 keymap("n", "<leader>-", ":sp<cr>", opts)                          -- create horizontal split
 keymap("n", "<leader>n", ":set relativenumber!<cr>", opts)         -- toggle relative number
-
---keymap("n", "<leader>s", "<Plug>(leap-forward)", opts)             -- jump forward (leap plugin)
---keymap("n", "<leader>S", "<Plug>(leap-backward)", opts)            -- jump backward
 
 -- Gitsigns shortcuts
 keymap("n", "<leader>gn", ":Gitsigns next_hunk<cr>", opts)         -- next changed code

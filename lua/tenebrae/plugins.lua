@@ -1,3 +1,12 @@
+-- =======================================
+--        tenebrae's nvim config
+--            _
+--     __   _(_)_ __ ___  _ __ ___
+--     \ \ / / | '_ ` _ \| '__/ __|
+--  _   \ V /| | | | | | | | | (__
+-- (_)   \_/ |_|_| |_| |_|_|  \___|
+--
+-- =======================================
 local fn = vim.fn
 
 -- Automatically install packer
@@ -55,7 +64,10 @@ return packer.startup(function(use)
         use 'moll/vim-bbye'                                                     -- Bdelete and other stuff for convinient closing buffers
         use "lukas-reineke/indent-blankline.nvim"                               -- indentation guides (pretty lines on the left in code)
         -- cmp plugins
-        use "hrsh7th/nvim-cmp"                                                  -- The completion plugin
+        use {
+                "hrsh7th/nvim-cmp",                                             -- The completion plugin
+                commit = "99ef854322d0de9269044ee197b6c9ca14911d96"
+        }
         use "hrsh7th/cmp-buffer"                                                -- buffer completions
         use "hrsh7th/cmp-path"                                                  -- path completions
         use "hrsh7th/cmp-cmdline"                                               -- cmdline completions
