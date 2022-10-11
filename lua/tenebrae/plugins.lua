@@ -53,7 +53,7 @@ return packer.startup(function(use)
         use "wbthomason/packer.nvim"                                            -- Have packer manage itself
         use "nvim-lua/popup.nvim"                                               -- An implementation of the Popup API from vim in Neovim
         use "nvim-lua/plenary.nvim"                                             -- Useful lua functions used ny lots of plugins
-        use "scrooloose/nerdcommenter"                                          -- Commenting things with ease
+        use "scrooloose/nerdcommenter"                                          -- Commenting things
         use {
                 'phaazon/hop.nvim',                                             -- easy jump analogy
                 branch = 'v2' -- optional but strongly recommended
@@ -65,8 +65,8 @@ return packer.startup(function(use)
         use "lukas-reineke/indent-blankline.nvim"                               -- indentation guides (pretty lines on the left in code)
         -- cmp plugins
         use {
-                "hrsh7th/nvim-cmp",                                             -- The completion plugin
-                commit = "99ef854322d0de9269044ee197b6c9ca14911d96"
+                "hrsh7th/nvim-cmp",                                             -- completion plugin
+                commit = "99ef854322d0de9269044ee197b6c9ca14911d96"             -- commit after this one was broken
         }
         use "hrsh7th/cmp-buffer"                                                -- buffer completions
         use "hrsh7th/cmp-path"                                                  -- path completions

@@ -17,10 +17,10 @@ local directions = require('hop.hint').HintDirection
 hop.setup { keys = 'etovxqpdygfblzhckisuran' }
 
 
-vim.keymap.set('n', 's', function()
+vim.keymap.set('n', '<leader>s', function()
         hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = false })
 end, {remap=true})
 
-vim.keymap.set('n', 'S', function()
+vim.keymap.set('n', '<leader>S', function()
         hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = false })
 end, {remap=true})

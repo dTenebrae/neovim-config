@@ -94,11 +94,10 @@ bufferline.setup {
                         bg = { attribute = "bg", highlight = "TabLine" },
                 },
 
-                -- buffer_selected = {
-                --   fg = {attribute='fg',highlight='#ff0000'},
-                --   bg = {attribute='bg',highlight='#0000ff'},
-                --   gui = 'none'
-                --   },
+                buffer_selected = {
+                        fg = {attribute='fg',highlight='#ff0000'},
+                        bg = {attribute='bg',highlight='#0000ff'},
+                },
                 buffer_visible = {
                         fg = { attribute = "fg", highlight = "TabLine" },
                         bg = { attribute = "bg", highlight = "TabLine" },

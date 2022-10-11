@@ -29,7 +29,7 @@ local diagnostics = {
 local diff = {
 	"diff",
 	colored = false,
-	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+	symbols = { added = " ", modified = " ", removed = " " },                            -- changes diff symbols
         cond = hide_in_width
 }
 
@@ -74,16 +74,22 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "gruvbox",
-		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
+		theme = "gruvbox_dark",
+                component_separators = { left = '', right = ''},
+                section_separators = { left = '', right = ''},
 		disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
 	},
 	sections = {
 		lualine_a = { branch, diagnostics },
 		lualine_b = { mode },
-		lualine_c = {},
+		lualine_c = {
+                        {
+                                'filename',
+                                file_status = true,                                             -- displays file status (readonly status, modified status)
+                                path = 1                                                        -- 0 = just filename, 1 = relative path, 2 = absolute path
+                        }
+                },
 		lualine_x = { diff, spaces, "encoding", filetype },
 		lualine_y = { location },
 		lualine_z = { progress },
