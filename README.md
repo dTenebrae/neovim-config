@@ -15,4 +15,4 @@ Moved from classic vimrc to modern, lua-driven config.
 
 ![neovim](neovim.png "Neovim")
 
-https://github.com/LunarVim/Neovim-from-scratch
+Most of a code was taken for [here](https://github.com/LunarVim/Neovim-from-scratch)
