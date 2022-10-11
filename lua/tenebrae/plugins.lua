@@ -44,26 +44,16 @@ return packer.startup(function(use)
         use "wbthomason/packer.nvim"                                            -- Have packer manage itself
         use "nvim-lua/popup.nvim"                                               -- An implementation of the Popup API from vim in Neovim
         use "nvim-lua/plenary.nvim"                                             -- Useful lua functions used ny lots of plugins
-
         use "scrooloose/nerdcommenter"                                          -- Commenting things with ease
-        use "ggandor/leap.nvim"                                                 -- fast moving in file
-
-        -- colorscheme
-        use 'eddyekofo94/gruvbox-flat.nvim'
-
-        -- bottomline
-        use 'nvim-lualine/lualine.nvim'
-
-        -- bufferline on top
-        use 'akinsho/bufferline.nvim'                                           -- bufferline itself
+        use {
+                'phaazon/hop.nvim',                                             -- easy jump analogy
+                branch = 'v2' -- optional but strongly recommended
+        }
+        use 'eddyekofo94/gruvbox-flat.nvim'                                     -- colorscheme
+        use 'nvim-lualine/lualine.nvim'                                         -- bottomline
+        use 'akinsho/bufferline.nvim'                                           -- bufferline (thing on top) itself
         use 'moll/vim-bbye'                                                     -- Bdelete and other stuff for convinient closing buffers
-
-        -- indentation guides
-        use "lukas-reineke/indent-blankline.nvim"
-
-        -- indentation guides
-        use "RRethy/vim-illuminate"
-
+        use "lukas-reineke/indent-blankline.nvim"                               -- indentation guides (pretty lines on the left in code)
         -- cmp plugins
         use "hrsh7th/nvim-cmp"                                                  -- The completion plugin
         use "hrsh7th/cmp-buffer"                                                -- buffer completions
@@ -72,41 +62,26 @@ return packer.startup(function(use)
         use "hrsh7th/cmp-nvim-lua"                                              -- lua completions
         use "hrsh7th/cmp-nvim-lsp"                                              -- LSP completions
         use "saadparwaiz1/cmp_luasnip"                                          -- snippet completions
-
-        -- snippets
         use "L3MON4D3/LuaSnip"                                                  -- snippet engine
         use "rafamadriz/friendly-snippets"                                      -- a bunch of snippets to use
-
         -- LSP
         use "neovim/nvim-lspconfig"                                             -- enable LSP
         use "williamboman/nvim-lsp-installer"                                   -- simple to use language server installer
-
-        -- Telescope
-        use "nvim-telescope/telescope.nvim"                                     -- telescope itself (fzf)
-
-        -- Treesitter
+        use "nvim-telescope/telescope.nvim"                                     -- telescope (fzf)
         use {
-                "nvim-treesitter/nvim-treesitter",
-                run = ":TSUpdate",
+                "nvim-treesitter/nvim-treesitter",                              -- treesitter
+                run = ":TSUpdate",                                              -- TODO not working on fresh install
         }
         use "p00f/nvim-ts-rainbow"                                              -- rainbow parenthesis for treesitter
         use {
-                "windwp/nvim-autopairs",
-                config = function() require("nvim-autopairs").setup {} end      -- parenthesis(and not only) autopairs
+                "windwp/nvim-autopairs",                                        -- parenthesis(and not only) autopairs
+                config = function() require("nvim-autopairs").setup {} end      -- 
         }
-
-        -- git
-        use "lewis6991/gitsigns.nvim"
-
-        -- Explorer
-        use 'kyazdani42/nvim-web-devicons'
-        use 'kyazdani42/nvim-tree.lua'
-
-        -- terminal emulator
-        use 'akinsho/toggleterm.nvim'
-
-        -- speedup start
-        use 'lewis6991/impatient.nvim'
+        use "lewis6991/gitsigns.nvim"                                           -- working with git
+        use 'kyazdani42/nvim-tree.lua'                                          -- file explorer
+        use 'kyazdani42/nvim-web-devicons'                                      -- icons for file explorer and others
+        use 'akinsho/toggleterm.nvim'                                           -- terminal emulator
+        use 'lewis6991/impatient.nvim'                                          -- speedup starting time
 
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins

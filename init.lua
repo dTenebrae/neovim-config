@@ -14,4 +14,5 @@ require "tenebrae.toggleterm"
 require "tenebrae.lualine"
 require "tenebrae.impatient"
 require "tenebrae.indendline"
+require "tenebrae.hop"
 

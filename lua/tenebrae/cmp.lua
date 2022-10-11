@@ -94,16 +94,15 @@ cmp.setup {
                 fields = { "kind", "abbr", "menu" },
                 format = function(entry, vim_item)
                 -- Kind icons
-                vim_item.kind = string.format(                                       -- This concatenates the icons with the name of the item kind
-                        '%s %s',
-                        kind_icons[vim_item.kind],
-                        vim_item.kind
-                )
+                vim_item.kind = string.format(
+                                '%s %s',
+                                kind_icons[vim_item.kind],
+                                vim_item.kind
+                        )                                                            -- This concatonates the icons with the name of the item kind
                 vim_item.menu = ({
                         nvim_lsp = "[LSP]",                                          --
-                        nvim_lua = "[LUA]",
-                        luasnip = "[Snippet]",                                       -- 
-                        buffer = "[Buffer]",                                         -- item menu names
+                        nvim_lua = "[LUA]",                                          --
+                        luasnip = "[Snippet]",                                       -- item menu names
                         path = "[Path]",                                             --
                 })[entry.source.name]
                 return vim_item
@@ -112,8 +111,7 @@ cmp.setup {
         sources = {
                 { name = "nvim_lsp" },                                               --
                 { name = "nvim_lua" },                                               --
-                { name = "luasnip" },                                                --
-                { name = "buffer" },                                                 -- Order of suggestions (snippet first, buffer second, etc)
+                { name = "luasnip" },                                                -- Order of suggestions (snippet first, buffer second, etc)
                 { name = "path" },                                                   --
         },
         confirm_opts = {
@@ -128,4 +126,3 @@ cmp.setup {
                 native_menu = false,
         },
 }
-
