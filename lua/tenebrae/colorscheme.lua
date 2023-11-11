@@ -7,10 +7,9 @@
 -- (_)   \_/ |_|_| |_| |_|_|  \___|
 --
 -- =======================================
-local colorscheme = "gruvbox-flat"
+local colorscheme = "no-clown-fiesta"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
-        vim.notify("colorscheme " .. colorscheme .. " not found!")
         return
 end

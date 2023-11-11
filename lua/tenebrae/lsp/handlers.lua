@@ -53,18 +53,6 @@ M.setup = function()
         })
 end
 
------- highlighting all instances of under cursor word
---local function lsp_highlight_document(client)
-        ---- Set autocommands conditional on server_capabilities
-        --local status_ok, illuminate = pcall(require, "illuminate")
-        --if not status_ok then
-                --print("illuminate not found")
-                --return
-        --end
-        --illuminate.on_attach(client)
-        ---- end
---end
-
 local function lsp_keymaps()
         local opts = { noremap = true, silent = true }
         vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
@@ -72,10 +60,9 @@ local function lsp_keymaps()
         vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
         vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
         vim.keymap.set("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-        -- vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
         vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-        -- vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-        -- vim.keymap.set("n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+        vim.keymap.set("n", "<leader>lo", ":LspStop<CR>", opts)
+        vim.keymap.set("n", "<leader>ls", ":LspStart<CR>", opts)
         vim.keymap.set("n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
         vim.keymap.set(
                 "n",
@@ -84,13 +71,11 @@ local function lsp_keymaps()
                 opts
                 )
         vim.keymap.set("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-        --vim.keymap.set("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
         vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
 M.on_attach = function(client)
         lsp_keymaps()
-        --lsp_highlight_document(client)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -100,7 +85,7 @@ if not status_ok then
         return
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return M
 

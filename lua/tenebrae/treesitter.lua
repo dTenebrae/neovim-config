@@ -19,7 +19,7 @@ configs.setup {
         ignore_install = { "" },                                        -- List of parsers to ignore installing
         highlight = {
                 enable = true,                                          -- false will disable the whole extension
-                disable = { "" },                                       -- list of language that will be disabled
+                disable = { "diff" },                                   -- list of language that will be disabled
                 additional_vim_regex_highlighting = {
                         enable = true,
                         disable ={ "c", "python", "lua", "rust" },
@@ -42,11 +42,11 @@ configs.setup {
         },
 
         -- disable slow treesitter highlight for large files
-        --disable = function(lang, buf)
-                --local max_filesize = 100 * 1024 -- 100 KB
-                --local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-                --if ok and stats and stats.size > max_filesize then
-                        --return true
-                --end
-        --end,
+        disable = function(lang, buf)
+                local max_filesize = 100 * 1024 -- 100 KB
+                local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+                if ok and stats and stats.size > max_filesize then
+                        return true
+                end
+        end,
 }

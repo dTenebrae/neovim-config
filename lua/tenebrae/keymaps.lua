@@ -34,20 +34,28 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
---keymap("n", "<leader>e", ":Lex 30<cr>", opts)                      -- open default file exploprer
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)              -- open file exploprer
+keymap("n", "<F3>", ":NvimTreeToggle<cr>", opts)                   -- open file exploprer
+keymap("n", "<leader>w", ":set wrap!<cr>", opts)                   -- toggle line wrap
 keymap("n", "<leader>y", "\"+y", opts)                             -- yank in external buffer
 keymap("n", "<leader>p", "\"+p", opts)                             -- paste from external buffer
 keymap("n", "<leader>/", ":nohlsearch<cr>", opts)                  -- clear search highlight
 keymap("n", "<leader>\\", ":vsp<cr>", opts)                        -- create vertical split
 keymap("n", "<leader>-", ":sp<cr>", opts)                          -- create horizontal split
 keymap("n", "<leader>n", ":set relativenumber!<cr>", opts)         -- toggle relative number
+keymap("n", "<leader>v", ":ErrorLensTelescope<cr>", opts)                              -- select word
 
 -- Gitsigns shortcuts
 keymap("n", "<leader>gn", ":Gitsigns next_hunk<cr>", opts)         -- next changed code
 keymap("n", "<leader>gp", ":Gitsigns prev_hunk<cr>", opts)         -- previous changed code
 keymap("n", "<leader>gv", ":Gitsigns preview_hunk<cr>", opts)      -- show changed code
 keymap("n", "<leader>gb", ":Gitsigns blame_line<cr>", opts)        -- who made changes
+
+
+-- Telescope bindings
+keymap("n", "<leader>f", "<cmd>Telescope find_files layout_strategy=horizontal<cr>", opts)
+keymap("n", "<leader>t", "<cmd>Telescope live_grep layout_strategy=horizontal<cr>", opts)
+keymap("n", "<leader>r", "<cmd>Telescope current_buffer_fuzzy_find layout_strategy=horizontal<cr>", opts)
+keymap("n", "<leader>e", "<cmd>Telescope grep_string layout_strategy=horizontal<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)                      -- resize horizontal split up
@@ -81,7 +89,4 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)                --
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)                -- same navigation buttons as for windows
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)                --
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)                --
-
-keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>t", "<cmd>Telescope live_grep<cr>", opts)
 

@@ -54,20 +54,23 @@ return packer.startup(function(use)
         use "nvim-lua/popup.nvim"                                               -- An implementation of the Popup API from vim in Neovim
         use "nvim-lua/plenary.nvim"                                             -- Useful lua functions used ny lots of plugins
         use "scrooloose/nerdcommenter"                                          -- Commenting things
-        use {
-                'phaazon/hop.nvim',                                             -- easy jump analogy
-                branch = 'v2' -- optional but strongly recommended
-        }
-        use 'eddyekofo94/gruvbox-flat.nvim'                                     -- colorscheme
+
+        -- Colorschemes
+        use "eddyekofo94/gruvbox-flat.nvim"
+        use "sainnhe/gruvbox-material"
+        use 'marko-cerovac/material.nvim'
+        use 'dTenebrae/coal.nvim'
+        use 'folke/tokyonight.nvim'
+        use 'luisiacc/gruvbox-baby'
+        use 'aktersnurra/no-clown-fiesta.nvim'
+        use 'rose-pine/neovim'
+
         use 'nvim-lualine/lualine.nvim'                                         -- bottomline
-        use 'akinsho/bufferline.nvim'                                           -- bufferline (thing on top) itself
+        use "akinsho/bufferline.nvim"
         use 'moll/vim-bbye'                                                     -- Bdelete and other stuff for convinient closing buffers
-        use "lukas-reineke/indent-blankline.nvim"                               -- indentation guides (pretty lines on the left in code)
+        use {"lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }    -- indentation guides (pretty lines on the left in code)
         -- cmp plugins
-        use {
-                "hrsh7th/nvim-cmp",                                             -- completion plugin
-                commit = "99ef854322d0de9269044ee197b6c9ca14911d96"             -- commit after this one was broken
-        }
+        use "hrsh7th/nvim-cmp"
         use "hrsh7th/cmp-buffer"                                                -- buffer completions
         use "hrsh7th/cmp-path"                                                  -- path completions
         use "hrsh7th/cmp-cmdline"                                               -- cmdline completions
@@ -78,22 +81,26 @@ return packer.startup(function(use)
         use "rafamadriz/friendly-snippets"                                      -- a bunch of snippets to use
         -- LSP
         use "neovim/nvim-lspconfig"                                             -- enable LSP
-        use "williamboman/nvim-lsp-installer"                                   -- simple to use language server installer
-        use "nvim-telescope/telescope.nvim"                                     -- telescope (fzf)
-        use {
-                "nvim-treesitter/nvim-treesitter",                              -- treesitter
-                run = ":TSUpdate",                                              -- TODO not working on fresh install
-        }
+        use "williamboman/mason.nvim"                                           -- LSP installer
+        use "nvim-telescope/telescope.nvim"
+        use "nvim-treesitter/nvim-treesitter"
         use "p00f/nvim-ts-rainbow"                                              -- rainbow parenthesis for treesitter
-        use {
-                "windwp/nvim-autopairs",                                        -- parenthesis(and not only) autopairs
-                config = function() require("nvim-autopairs").setup {} end      -- 
-        }
         use "lewis6991/gitsigns.nvim"                                           -- working with git
         use 'kyazdani42/nvim-tree.lua'                                          -- file explorer
         use 'kyazdani42/nvim-web-devicons'                                      -- icons for file explorer and others
         use 'akinsho/toggleterm.nvim'                                           -- terminal emulator
-        use 'lewis6991/impatient.nvim'                                          -- speedup starting time
+        use ({
+                'norcalli/nvim-colorizer.lua',
+                config = function()
+                require('colorizer').setup()
+                end
+        })
+
+        use {
+            'chikko80/error-lens.nvim',
+            requires = {'nvim-telescope/telescope.nvim'}
+        }
+        use "folke/which-key.nvim"
 
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins
