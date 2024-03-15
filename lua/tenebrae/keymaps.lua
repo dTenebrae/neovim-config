@@ -52,10 +52,12 @@ keymap("n", "<leader>gb", ":Gitsigns blame_line<cr>", opts)        -- who made c
 
 
 -- Telescope bindings
-keymap("n", "<leader>f", "<cmd>Telescope find_files layout_strategy=horizontal<cr>", opts)
-keymap("n", "<leader>t", "<cmd>Telescope live_grep layout_strategy=horizontal<cr>", opts)
-keymap("n", "<leader>r", "<cmd>Telescope current_buffer_fuzzy_find layout_strategy=horizontal<cr>", opts)
-keymap("n", "<leader>e", "<cmd>Telescope grep_string layout_strategy=horizontal<cr>", opts)
+keymap("n", "<leader>f", "<cmd>Telescope find_files layout_strategy=vertical<cr>", opts)
+keymap("n", "<leader>t", "<cmd>Telescope live_grep layout_strategy=vertical<cr>", opts)
+keymap("n", "<leader>r", "<cmd>Telescope current_buffer_fuzzy_find layout_strategy=vertical<cr>", opts)
+keymap("n", "<leader>e", "<cmd>Telescope grep_string layout_strategy=vertical<cr>", opts)
+
+keymap("n", "<leader>b", ":Navbuddy<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)                      -- resize horizontal split up

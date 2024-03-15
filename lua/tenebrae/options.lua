@@ -53,6 +53,7 @@ for k, v in pairs(options) do
 end
 
 vim.g.gruvbox_flat_style = "hard"               -- darker mode for gruvbox-flat colorscheme
+vim.g.gruvbox_baby_background_color = "dark"
 
 --vim.api.nvim_create_autocmd(
         --{ "BufRead", "BufNewFile" },

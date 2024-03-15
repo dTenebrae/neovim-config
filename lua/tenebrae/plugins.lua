@@ -81,7 +81,7 @@ return packer.startup(function(use)
         use "rafamadriz/friendly-snippets"                                      -- a bunch of snippets to use
         -- LSP
         use "neovim/nvim-lspconfig"                                             -- enable LSP
-        use "williamboman/mason.nvim"                                           -- LSP installer
+        --use "williamboman/mason.nvim"                                           -- LSP installer
         use "nvim-telescope/telescope.nvim"
         use "nvim-treesitter/nvim-treesitter"
         use "p00f/nvim-ts-rainbow"                                              -- rainbow parenthesis for treesitter
@@ -95,12 +95,30 @@ return packer.startup(function(use)
                 require('colorizer').setup()
                 end
         })
+        use {
+                "SmiteshP/nvim-navbuddy",
+                requires = {
+                        "neovim/nvim-lspconfig",
+                        "SmiteshP/nvim-navic",
+                        "MunifTanjim/nui.nvim",
+                        "numToStr/Comment.nvim",        -- Optional
+                        "nvim-telescope/telescope.nvim" -- Optional
+                }
+        }
+
+        use {
+                "ldelossa/litee-calltree.nvim",
+                requires = {
+                        "ldelossa/litee.nvim"
+                }
+        }
 
         use {
             'chikko80/error-lens.nvim',
             requires = {'nvim-telescope/telescope.nvim'}
         }
         use "folke/which-key.nvim"
+        use "windwp/nvim-autopairs"
 
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins
